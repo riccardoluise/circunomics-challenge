@@ -12,10 +12,10 @@ npm start
 
 ## Technology Choices
 
-| Category      | Choice     | Rationale                          |
-| ------------- | ---------- | ---------------------------------- |
-| **Framework** | Angular 19 | Aligned with Circunomics stack     |
-| **Styling**   | SCSS       | Aligned with Circunomics stack     |
+| Category      | Choice     | Rationale                      |
+| ------------- | ---------- | ------------------------------ |
+| **Framework** | Angular 19 | Aligned with Circunomics stack |
+| **Styling**   | SCSS       | Aligned with Circunomics stack |
 
 ## Code Quality Tools
 
@@ -30,16 +30,22 @@ npm start
 - **Structure**: Given/When/Then comments inside tests
 - **Assertions**: `.withContext()` on all `expect()` for clear error messages
 
+## Features
+
+- **Repository List**: Displays repositories with avatar, name, description, stars, issues, and owner
+
 ## Project Structure
 
 ```
 src/app/
+├── components/
+│   └── repo-list/                # Main repository list
 ├── constants/
-│   ├── api-paths.ts          # API endpoints
-│   └── app.constants.ts      # App configuration
+│   ├── api-paths.ts              # API endpoints
+│   └── app.constants.ts          # App configuration
 ├── models/
-│   ├── types.ts              # Type aliases (RepositoryId, Rating)
-│   ├── repository.model.ts   # Repository interfaces
+│   ├── types.ts                  # Type aliases (RepositoryId, Rating)
+│   ├── repository.model.ts       # Repository interfaces
 │   └── github-response.model.ts
 ├── services/
 │   └── github-client.service.ts  # GitHub API client

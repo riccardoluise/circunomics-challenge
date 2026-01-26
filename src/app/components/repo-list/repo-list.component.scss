@@ -1,0 +1,135 @@
+$row-height: 160px;
+$bg-color: #f1f5f9;
+$card-bg: #ffffff;
+$text-primary: #0f172a;
+$text-secondary: #64748b;
+$border-color: #e2e8f0;
+$highlight-color: #0366d6;
+
+.repo-list-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: $bg-color;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: $text-primary;
+}
+
+.repo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.repo-row {
+  display: flex;
+  background: $card-bg;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  height: $row-height;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.avatar-container {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-right: 1px solid $border-color;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.repo-info {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.repo-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.repo-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $highlight-color;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.repo-description {
+  font-size: 0.95rem;
+  color: $text-secondary;
+  margin: 0 0 auto 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.repo-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+  font-size: 0.85rem;
+  color: $text-secondary;
+}
+
+.stat-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  .icon-star {
+    width: 14px;
+    height: 14px;
+    color: #f59e0b;
+  }
+
+  .icon-issue {
+    width: 12px;
+    height: 12px;
+    color: #ef4444;
+  }
+}
+
+.submitted {
+  font-size: 0.85rem;
+  color: $text-secondary;
+
+  .owner-name {
+    font-weight: 600;
+    color: $text-primary;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: $text-secondary;
+}
