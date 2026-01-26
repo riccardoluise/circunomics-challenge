@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RepoListComponent } from './components/repo-list/repo-list.component';
 
 @Component({
   selector: 'cir-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [RepoListComponent],
+  template: '<cir-repo-list />',
+  styles: [],
 })
-export class AppComponent {
-  title = 'app';
-}
+export class AppComponent {}

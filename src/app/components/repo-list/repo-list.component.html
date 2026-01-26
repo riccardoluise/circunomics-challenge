@@ -1,0 +1,44 @@
+<div class="repo-list-container">
+  <h1 class="title">Trending Repos</h1>
+
+  <div class="repo-list">
+    @for (repo of repositories(); track repo.id) {
+      <div class="repo-row">
+        <div class="avatar-container">
+          <img class="avatar" [src]="repo.owner.avatar_url" [alt]="repo.owner.login + ' avatar'" />
+        </div>
+
+        <div class="repo-info">
+          <div class="repo-header">
+            <span class="repo-name">{{ repo.name }}</span>
+          </div>
+
+          <p class="repo-description">{{ repo.description }}</p>
+
+          <div class="repo-meta">
+            <span class="stat-item">
+              <svg class="icon-star" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 0l2.5 5 5.5.8-4 3.8 1 5.4-5-2.6-5 2.6 1-5.4-4-3.8 5.5-.8z" />
+              </svg>
+              <span>{{ repo.stargazers_count }}</span>
+            </span>
+            <span class="stat-item">
+              <svg class="icon-issue" viewBox="0 0 16 16" fill="currentColor">
+                <circle cx="8" cy="8" r="6" />
+              </svg>
+              <span>{{ repo.open_issues_count }}</span>
+            </span>
+            <span class="submitted">
+              Submitted by
+              <span class="owner-name">{{ repo.owner.login }}</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  @if (loading()) {
+    <div class="loading">Loading...</div>
+  }
+</div>
