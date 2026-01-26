@@ -23,12 +23,24 @@ npm start
 - **Prettier**: Code formatting
 - **Husky + lint-staged**: Pre-commit hooks
 
+## Testing
+
+- **Framework**: Jasmine + Karma
+- **Style**: BDD with `describe('when ...')` and `it('should ...')`
+- **Structure**: Given/When/Then comments inside tests
+- **Assertions**: `.withContext()` on all `expect()` for clear error messages
+
 ## Project Structure
 
 ```
 src/app/
+├── constants/
+│   ├── api-paths.ts          # API endpoints
+│   └── app.constants.ts      # App configuration
 ├── models/
 │   ├── types.ts              # Type aliases (RepositoryId, Rating)
 │   ├── repository.model.ts   # Repository interfaces
 │   └── github-response.model.ts
+├── services/
+│   └── github-client.service.ts  # GitHub API client
 ```
