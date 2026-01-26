@@ -16,3 +16,19 @@ npm start
 | ------------- | ---------- | ---------------------------------- |
 | **Framework** | Angular 19 | Aligned with Circunomics stack     |
 | **Styling**   | SCSS       | Aligned with Circunomics stack     |
+
+## Code Quality Tools
+
+- **ESLint**: TypeScript and Angular linting
+- **Prettier**: Code formatting
+- **Husky + lint-staged**: Pre-commit hooks
+
+## Project Structure
+
+```
+src/app/
+├── models/
+│   ├── types.ts              # Type aliases (RepositoryId, Rating)
+│   ├── repository.model.ts   # Repository interfaces
+│   └── github-response.model.ts
+```
