@@ -1,0 +1,45 @@
+<div
+  class="modal-backdrop"
+  role="dialog"
+  aria-modal="true"
+  tabindex="-1"
+  (click)="onBackdropClick($event)"
+  (keydown.escape)="onCloseClick()"
+>
+  <div class="modal-content">
+    <button class="close-button" (click)="onCloseClick()">✕</button>
+
+    <div class="modal-header">
+      <img class="modal-avatar" [src]="repo().owner.avatar_url" [alt]="repo().owner.login" />
+      <div class="modal-title-section">
+        <h2 class="modal-title">{{ repo().name }}</h2>
+        <span class="modal-owner">by {{ repo().owner.login }}</span>
+      </div>
+    </div>
+
+    <p class="modal-description">{{ repo().description }}</p>
+
+    <div class="modal-stats">
+      <div class="stat">
+        <div class="stat-row">
+          <svg class="icon-star" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0l2.5 5 5.5.8-4 3.8 1 5.4-5-2.6-5 2.6 1-5.4-4-3.8 5.5-.8z" />
+          </svg>
+          <span class="stat-value">{{ repo().stargazers_count }}</span>
+        </div>
+        <span class="stat-label">Stars</span>
+      </div>
+      <div class="stat">
+        <div class="stat-row">
+          <svg class="icon-issue" viewBox="0 0 16 16" fill="currentColor">
+            <circle cx="8" cy="8" r="6" />
+          </svg>
+          <span class="stat-value">{{ repo().open_issues_count }}</span>
+        </div>
+        <span class="stat-label">Issues</span>
+      </div>
+    </div>
+
+    <a class="github-link" [href]="repo().html_url" target="_blank"> View on GitHub → </a>
+  </div>
+</div>

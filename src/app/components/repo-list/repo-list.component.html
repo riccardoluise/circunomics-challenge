@@ -10,7 +10,13 @@
 
         <div class="repo-info">
           <div class="repo-header">
-            <span class="repo-name">{{ repo.name }}</span>
+            <span
+              class="repo-name"
+              tabindex="0"
+              role="button"
+              (click)="openModal(repo)"
+              (keyup.enter)="openModal(repo)"
+            >{{ repo.name }}</span>
           </div>
 
           <p class="repo-description">{{ repo.description }}</p>
@@ -40,5 +46,9 @@
 
   @if (loading()) {
     <div class="loading">Loading...</div>
+  }
+
+  @if (selectedRepo(); as repo) {
+    <cir-repo-modal [repo]="repo" (closeModal)="closeModal()" />
   }
 </div>

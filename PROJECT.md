@@ -34,13 +34,15 @@ npm start
 
 - **Repository List**: Displays repositories with avatar, name, description, stars, issues, and owner
 - **Infinite Scroll**: Automatically loads more repositories when scrolling to the bottom
+- **Modal Details**: Click on a repository name to view details in a modal
 
 ## Project Structure
 
 ```
 src/app/
 ├── components/
-│   └── repo-list/                # Main repository list
+│   ├── repo-list/                # Main repository list
+│   └── repo-modal/               # Repository details modal
 ├── constants/
 │   ├── api-paths.ts              # API endpoints
 │   └── app.constants.ts          # App configuration
