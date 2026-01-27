@@ -69,6 +69,21 @@ $highlight-color: #0366d6;
   margin-bottom: 0.5rem;
 }
 
+.rating-display {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.rating-star {
+  width: 14px;
+  height: 14px;
+  color: #cbd5e1;
+
+  &.filled {
+    color: #f59e0b;
+  }
+}
+
 .repo-name {
   font-size: 1.25rem;
   font-weight: 600;

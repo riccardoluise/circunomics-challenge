@@ -40,6 +40,25 @@
       </div>
     </div>
 
+    <div class="rating-section">
+      <span class="rating-label">Rate this repository:</span>
+      <div class="stars" (mouseleave)="onStarLeave()">
+        @for (star of stars; track star) {
+          <button
+            class="star-button"
+            [class.filled]="star <= displayRating()"
+            (mouseenter)="onStarHover(star)"
+            (click)="onStarClick(star)"
+            [attr.aria-label]="'Rate ' + star + ' stars'"
+          >
+            <svg viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0l2.5 5 5.5.8-4 3.8 1 5.4-5-2.6-5 2.6 1-5.4-4-3.8 5.5-.8z" />
+            </svg>
+          </button>
+        }
+      </div>
+    </div>
+
     <a class="github-link" [href]="repo().html_url" target="_blank"> View on GitHub → </a>
   </div>
 </div>

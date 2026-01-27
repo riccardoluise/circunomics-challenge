@@ -35,6 +35,7 @@ npm start
 - **Repository List**: Displays repositories with avatar, name, description, stars, issues, and owner
 - **Infinite Scroll**: Automatically loads more repositories when scrolling to the bottom
 - **Modal Details**: Click on a repository name to view details in a modal
+- **Rating System**: 5-star rating system with hover preview and persistence
 
 ## Project Structure
 
@@ -51,5 +52,6 @@ src/app/
 │   ├── repository.model.ts       # Repository interfaces
 │   └── github-response.model.ts
 ├── services/
-│   └── github-client.service.ts  # GitHub API client
+│   ├── github-client.service.ts  # GitHub API client
+│   └── rating.service.ts         # Rating state management
 ```
