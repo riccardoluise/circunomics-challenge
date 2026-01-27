@@ -33,6 +33,7 @@ npm start
 ## Features
 
 - **Repository List**: Displays repositories with avatar, name, description, stars, issues, and owner
+- **Infinite Scroll**: Automatically loads more repositories when scrolling to the bottom
 
 ## Project Structure
 

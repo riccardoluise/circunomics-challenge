@@ -91,4 +91,36 @@ describe('when displaying repository list (RepoListComponent)', () => {
       req.flush(mockResponse);
     });
   });
+
+  describe('when paginating results', () => {
+    it('should increment page after loading', fakeAsync(() => {
+      // Given
+      fixture.detectChanges();
+
+      // When
+      const req = httpMock.expectOne((r) => r.url.includes('api.github.com'));
+      req.flush(mockResponse);
+      tick();
+
+      // Then
+      expect(component.currentPage())
+        .withContext('currentPage should increment after successful load')
+        .toBe(2);
+    }));
+
+    it('should set hasMore to false when API returns empty items', fakeAsync(() => {
+      // Given
+      fixture.detectChanges();
+
+      // When
+      const req = httpMock.expectOne((r) => r.url.includes('api.github.com'));
+      req.flush({ total_count: 0, incomplete_results: false, items: [] });
+      tick();
+
+      // Then
+      expect(component.hasMore())
+        .withContext('hasMore should be false when no more items available')
+        .toBeFalse();
+    }));
+  });
 });
