@@ -32,7 +32,6 @@ describe('when displaying repository details modal (RepoModalComponent)', () => 
   });
 
   it('should create RepoModalComponent', () => {
-    // Then
     expect(component)
       .withContext('RepoModalComponent should be provided via DI, it should exist, be defined')
       .toBeDefined();

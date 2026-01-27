@@ -16,7 +16,22 @@
               role="button"
               (click)="openModal(repo)"
               (keyup.enter)="openModal(repo)"
-            >{{ repo.name }}</span>
+              >{{ repo.name }}</span
+            >
+            @if (getRating(repo.id); as rating) {
+              <span class="rating-display">
+                @for (star of [1, 2, 3, 4, 5]; track star) {
+                  <svg
+                    class="rating-star"
+                    [class.filled]="star <= rating"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                  >
+                    <path d="M8 0l2.5 5 5.5.8-4 3.8 1 5.4-5-2.6-5 2.6 1-5.4-4-3.8 5.5-.8z" />
+                  </svg>
+                }
+              </span>
+            }
           </div>
 
           <p class="repo-description">{{ repo.description }}</p>

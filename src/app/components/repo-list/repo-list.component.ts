@@ -8,8 +8,9 @@ import {
   DestroyRef,
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Repository } from '../../models';
+import { Repository, RepositoryId } from '../../models';
 import { GithubClientService } from '../../services/github-client.service';
+import { RatingService } from '../../services/rating.service';
 import { RepoModalComponent } from '../repo-modal/repo-modal.component';
 import { APP_CONSTANTS } from '../../constants';
 
@@ -22,6 +23,7 @@ import { APP_CONSTANTS } from '../../constants';
 })
 export class RepoListComponent implements OnInit {
   private readonly githubClientService = inject(GithubClientService);
+  private readonly ratingService = inject(RatingService);
   private readonly destroyRef = inject(DestroyRef);
 
   repositories = signal<Repository[]>([]);
@@ -70,5 +72,9 @@ export class RepoListComponent implements OnInit {
 
   closeModal(): void {
     this.selectedRepo.set(null);
+  }
+
+  getRating(repoId: RepositoryId): number | undefined {
+    return this.ratingService.getRating(repoId);
   }
 }
