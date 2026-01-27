@@ -73,9 +73,14 @@ $highlight-color: #0366d6;
   font-size: 1.25rem;
   font-weight: 600;
   color: $highlight-color;
+  cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .repo-description {
