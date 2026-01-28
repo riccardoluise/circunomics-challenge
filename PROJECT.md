@@ -39,19 +39,28 @@ npm start
 
 ## Project Structure
 
+_(*.spec.ts test files omitted)_
+
 ```
 src/app/
+├── app.component.ts                      # Root component
+├── app.config.ts                         # App configuration (providers)
+├── app.routes.ts                         # Route definitions
 ├── components/
-│   ├── repo-list/                # Main repository list
-│   └── repo-modal/               # Repository details modal
+│   ├── repo-list/
+│   │   └── repo-list.component.ts        # Main repository list
+│   └── repo-modal/
+│       └── repo-modal.component.ts       # Repository details modal
 ├── constants/
-│   ├── api-paths.ts              # API endpoints
-│   └── app.constants.ts          # App configuration
+│   ├── index.ts                          # Barrel export
+│   ├── api-paths.ts                      # API endpoints
+│   └── app.constants.ts                  # App configuration
 ├── models/
-│   ├── types.ts                  # Type aliases (RepositoryId, Rating)
-│   ├── repository.model.ts       # Repository interfaces
-│   └── github-response.model.ts
-├── services/
-│   ├── github-client.service.ts  # GitHub API client
-│   └── rating.service.ts         # Rating state management
+│   ├── index.ts                          # Barrel export
+│   ├── types.ts                          # Type aliases (RepositoryId, Rating)
+│   ├── repository.model.ts               # Repository interfaces
+│   └── github-response.model.ts          # GitHub API response
+└── services/
+    ├── github-client.service.ts          # GitHub API client
+    └── rating.service.ts                 # Rating state management
 ```
